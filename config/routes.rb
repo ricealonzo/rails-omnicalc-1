@@ -9,14 +9,4 @@ Rails.application.routes.draw do
   get("/random/new",{ :controller => "calculations", :action => "random"}) 
   get("/random/results",{ :controller => "calculations", :action => "random_results"}) 
   
-# get("/random/new") do
-#   erb(:random)
-# end
-
-# get("/random/results") do
-#   @min_num = params.fetch("min").to_i
-#   @max_num = params.fetch("max").to_i
-#   @random_num = rand(@min..@max)
-#   erb(:random_results)
-# end
 end
