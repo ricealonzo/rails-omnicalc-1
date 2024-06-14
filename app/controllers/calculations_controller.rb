@@ -9,15 +9,17 @@ def square_results
     @square = @num * @num
     render({:template => "/calculation_views/square_results"})
   end
-def square_root
+
+  def square_root
     render({:template => "/calculation_views/square_root"})
   end
 def square_root_results
   @num = params.fetch("num").to_f
   @square_root = Math.sqrt(@num)
-    render({:template => "/calculation_views/square_results"})
+    render({:template => "/calculation_views/square_root_results"})
   end
-def payment
+
+  def payment
     render({:template => "/calculation_views/payment"})
   end
 def payment_results
@@ -38,13 +40,15 @@ def payment_results
     render({:template => "/calculation_views/payment_results"})
   end
 
+
   def random
     render({:template => "/calculation_views/random"})
   end
   def random_results
     @min_num = params.fetch("min").to_i
     @max_num = params.fetch("max").to_i
-    @random_num = rand(@min..@max)
+    @random_num = rand(@min_num...@max_num)
+    
     render({:template => "/calculation_views/random_results"})
   end
 
